@@ -69,6 +69,14 @@ li {
     height: 100px;
 }
   
+.logo__wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+height: 52px;
+}
 
 .nav__link--list {
     display: flex;
