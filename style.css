@@ -68,6 +68,15 @@ li {
     justify-content: space-between;
     height: 100px;
 }
+
+.nav__img {
+position: absolute;
+width: 100%;
+max-width: 1200px;
+height: 250px;
+opacity: 0.8;
+margin: 0 auto;
+}
   
 .logo__wrapper {
     display: flex;
@@ -80,6 +89,9 @@ height: 52px;
 
 .nav__link--list {
     display: flex;
+    justify-content: space-between;
+    position: relative;
+    
 }
 
 .nav__link {
