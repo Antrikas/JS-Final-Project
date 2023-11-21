@@ -91,7 +91,6 @@ li {
   width: 100px;
   z-index: 100;
   box-shadow: 0 12px 30px 0 rbg(0, 0, 0, 0.28);
-  border-radius: 10px;
   margin-left: 120px;
   margin-top: 28px;
   transition: all 300ms ease;
@@ -133,24 +132,24 @@ li {
 }
 
 .nav__link--anchor:hover{
-    background-color: rgb(58, 57, 57);
+    background-color: rgb(109, 109, 109);
     color: white;
     
 }
 
 
 .btn-contact {
-  background-color: rgba(217, 7, 7, 0.893);
+  background-color: #0066b2;
   color: white;
   padding: 8px 20px;
-  border: 2px #eb4444f3;
+  border: 2px #29a1fd;
   border-radius: 50px;
   text-decoration: none;
   transition: all 300ms ease;
 }
 
 .btn-contact:hover {
-  background-color: #eb4444f3;
+  background-color: #29a1fd;
   color: white !important;
 }
 
@@ -187,7 +186,7 @@ input[type="text"] {
 }
 
 input::placeholder {
-    color: #a0aec068;
+    color: #87919e68;
     margin-right: -100px;
     z-index: 100;
   }
@@ -197,7 +196,7 @@ input:hover {
 }
 
 .btn:hover {
-    background-color:#eb4444f3 ;
+    background-color:#29a1fd;
     cursor: pointer;
 }
 
@@ -215,7 +214,7 @@ input:hover {
 }
 
 .btn {
-    background-color:rgba(217, 7, 7, 0.893);
+    background-color:#0066b2;
     color: white;
     border-radius: 9999px;
     border: none;
