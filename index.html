@@ -1,42 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>W4 Final P</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="index.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <section>
-    <nav>
+      <nav>
         <div class="row">
-            <img src="./Assets/movietheater.webp" class="nav__img" alt="">
-           <div class="nav__container">
+          <img src="./Assets/movie-theater-business.jpg" class="nav__img" alt="" />
+          <div class="nav__container">
             <a href="#">
-            <div class="logo__wrapper">
-                <img src="./Assets/1000_F_297345038_cdSvUq47EhlgL1xjW3zTOF8MqM1d2TqU.jpg" class="logo" alt="">
-            </div>
+              <div class="logo__wrapper">
+                <img
+                  src="./Assets/1000_F_297345038_cdSvUq47EhlgL1xjW3zTOF8MqM1d2TqU.jpg"
+                  class="logo"
+                  alt=""
+                />
+              </div>
             </a>
             <ul class="nav__link--list">
-                <li class="nav__link">
-                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--white">Home
-                    </a>
-                </li>
-                <li class="nav__link">
-                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--white">Find your Movie
-                    </a>
-                </li>
-                <li class="nav__link">
-                    <a href="#" class="nav__link--anchor btn-contact">Contact
-                    </a>
-                </li>
+              <li class="nav__link">
+                <a
+                  href="#"
+                  class="nav__link--anchor link__hover-effect link__hover-effect--white"
+                  >Home
+                </a>
+              </li>
+              <li class="nav__link">
+                <a
+                  href="#"
+                  class="nav__link--anchor link__hover-effect link__hover-effect--white"
+                  >Find your Movie
+                </a>
+              </li>
+              <li class="nav__link">
+                <a href="#" class="nav__link--anchor btn-contact">Contact </a>
+              </li>
             </ul>
-           </div> 
+          </div>
         </div>
-    </nav>
-</section>
+      </nav>
+    </section>
 
-
-</body>
+    <section id="Search">
+      <div class="container">
+        <div class="row">
+          <h1 class="nav__description--title">Find a Movie</h1>
+          <form action="#" method="POST">
+            <input
+              type="text"
+              id="movie"
+              name="title"
+              placeholder="Search by title"
+              required
+            />
+            <div class="header__btn--wrapper">
+              <button class="btn header__btn">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
