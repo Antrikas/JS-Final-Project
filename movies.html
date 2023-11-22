@@ -9,6 +9,20 @@
     
 </body>
 <body>
+  <main id="books__main">
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="movie__header">
+          <h2 class="section__title movie__header--title">
+            All <span class="purple">Movies</span>
+          </h2>
+          <select id="filter" onchange="filterBooks(event)">
+            <option value="" disabled selected>Sort</option>
+            <option value="NEW_TO_OLD"> Year, New to Old</option>
+            <option value="OLD_TO_NEW"> Year, Old to New</option>
+          </select>
+
     <div class="post__search">
       <a href="/index.html">
         <button>← Back</button>
