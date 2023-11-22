@@ -139,17 +139,17 @@ li {
 
 
 .btn-contact {
-  background-color: #0066b2;
+  background-color: #D1001C;
   color: white;
   padding: 8px 20px;
-  border: 2px #29a1fd;
+  border: 2px #FC0E34;
   border-radius: 50px;
   text-decoration: none;
   transition: all 300ms ease;
 }
 
 .btn-contact:hover {
-  background-color: #29a1fd;
+  background-color: #FC0E34;
   color: white !important;
 }
 
@@ -196,7 +196,7 @@ input:hover {
 }
 
 .btn:hover {
-    background-color:#29a1fd;
+    background-color:#FC0E34;
     cursor: pointer;
 }
 
@@ -214,7 +214,7 @@ input:hover {
 }
 
 .btn {
-    background-color:#0066b2;
+    background-color:#D1001C;
     color: white;
     border-radius: 9999px;
     border: none;
