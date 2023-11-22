@@ -6,7 +6,7 @@
     moviesWrapper.classList += 'movies__loading'
 
     if (!movies) {
-        movies =await getMovies ();
+        movies = await getMovies ();
     }
  }
 
