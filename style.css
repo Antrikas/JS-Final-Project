@@ -7,9 +7,40 @@
   font-family: "Inter", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+  
+ 
+nav {
+    height: 80px;
+    display: flex;
+  }
+  
+  
+
+a {
+    text-decoration: none;
+  }
+  
+a:hover {
+    text-decoration: underline;
+  }
+
+ul {
+    display: flex;
+  }
+
 li {
   list-style-type: none;
 }
+
+h1 {
+    font-size: 56px;
+    color: gray;
+    margin-bottom: 24px;
+    text-align: center;
+  }
 
 .click {
   cursor: pointer;
@@ -50,6 +81,11 @@ li {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+
+.red{
+   color: #D1001C;
 }
 
 /*
@@ -224,5 +260,244 @@ input:hover {
     margin-right: 8px;
    margin-bottom: 3px;
  }
+
+/*
+
+ MAIN
  
+  */
  
+  #movies__main {
+    background-color: #242424;
+    flex: 1;
+    margin-top: 50px;
+  }
+  
+  .movie__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+  }
+
+  .movie__header--title {
+    color: white;
+    margin-bottom: 0;
+  }
+
+ select {
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid white;
+    height: 40px;
+    line-height: 40px;
+    outline: none;
+    padding: 0 16px;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .movies__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px;
+    font-size: 60px;
+    color: #D1001C;
+  }
+  
+  .movies__loading--spinner{
+  display: none !important;
+  }
+  
+  .movies__loading .books__loading--spinner {
+    display: block !important;
+  }
+  
+  .fa-spinner {
+    color: white;
+    animation: rotate 600ms infinite linear;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+/* 
+
+FEATURES
+
+*/
+
+#features {
+    background-color: #313131;
+    padding-top: 8vw;
+  }
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+}
+  
+.movies {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+.movie{
+ width: 100%;
+display: flex;
+align-items: center;
+}
+  
+.movie__img {
+    max-height: 380px;
+    transition: all 300ms ease;
+    cursor: not-allowed;
+    object-fit: contain;
+    object-position: left;
+  }
+  
+.movie__img--wrapper {
+    margin-bottom: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+  }
+  
+.movie:hover .movie__img {
+    transform: scale(1.03);
+  }
+  
+.movie__title {
+    display: flex;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+.movie__title:hover {
+    text-decoration: underline;
+    cursor: not-allowed;
+  }
+
+.year{
+    display: flex;
+    
+    color: white;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+.year:hover{
+    text-decoration: underline;
+    cursor: not-allowed;
+  }
+
+
+ 
+
+ /*
+
+ FOOTER
+
+ */
+
+.divider {
+    height: 1px;
+    border-radius: 9999px;
+    width: 100% ;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+ .container{
+    padding: 28px 0;
+ }
+
+ .row {
+    width: 100%;
+   
+  }
+  
+  .row__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+ footer {
+    background-color: #242424;
+  }
+  
+  .footer__logo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer__logo--img {
+    width: 160px;
+    filter: grayscale(1) invert(1);
+  }
+  
+  .footer__link,
+  .footer__copyright {
+    color: #fff;
+  }
+  
+  .footer__list {
+    margin: 20px 0 24px 0;
+  }
+  
+  .footer__link {
+    padding: 0 8px;
+  }
+  
+
+
+  /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
+@media (max-width: 768px) {
+    .header__description {
+      padding: 0 24px;
+    }
+  
+    h1 {
+      font-size: 40px;
+    }
+  
+
+    button {
+      font-size: 18px;
+    }
+  
+    .movie {
+      width: 50%;
+    }
+  }
+  
+  
+  /* SMALL PHONES, LARGE SMARTPHONES */
+  @media (max-width: 550px) {
+    .btn__menu {
+      display: block;
+    }
+  
+    .nav__links {
+      display: none;
+    }
+  
+    .highlight {
+      width: 100%;
+    }
+  
+    .highlight:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }

@@ -3,7 +3,7 @@
 async function main() {
     const users = await fetch("https://www.omdbapi.com/?apikey=34a5c5d4&s=fast")
     const usersData = await users.json()
-   const userListEl = document.querySelector(".user-list") 
+   const userListEl = document.querySelector(".movie-list") 
 
    userListEl.innerHTML = usersData.map((user) => userHTML(user)).join("")
     
@@ -16,16 +16,16 @@ function showUserPost(id){
 window.location.href = `${window.location.origin}/user.html`
 }
 
-function userHTML (user) {
-    return `<div class="user-card" onlick="showUserPost(${user.id})>
-    <div class="user-card__container">
+function userHTML (movie) {
+    return `<div class="movie-card" onlick="showMoviePost(${movie.id})>
+    <div class="movie-card__container">
       <h3>${user.name}</h4>
-        <p><b>Title:</b> ${user.title}</p>
-        <p><b>Year:</b> ${user.year}</p>
-        <p><b>ImdbID:</b> <a href="https://${user.imdbId}" target="_blank">
-        ${user.website}
-        <p><b>Type:</b> ${user.movie}</p>
-        <p><b>Poster:</b> ${user.poster}</p>
+        <p><b>Title:</b> ${movie.title}</p>
+        <p><b>Year:</b> ${movie.year}</p>
+        <p><b>ImdbID:</b> <a href="https://${movie.imdbId}" target="_blank">
+        ${movie.website}
+        <p><b>Type:</b> ${movie.type}</p>
+        <p><b>Poster:</b> ${movie.poster}</p>
         </a></p>
     </div>
     </div>`

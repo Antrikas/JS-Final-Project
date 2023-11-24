@@ -3,7 +3,7 @@
  async function renderMovies(filter) {
     const moviesWrapper = document.querySelector(".movies")
 
-    moviesWrapper.classList += 'movies__loading'
+    moviesWrapper.classList += ' movies__loading'
 
     if (!movies) {
         movies = await getMovies ();

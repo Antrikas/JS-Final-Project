@@ -38,7 +38,7 @@
                 <a
                   href="#"
                   class="nav__link--anchor link__hover-effect link__hover-effect--white"
-                  >Find your Movie
+                  >Movies
                 </a>
               </li>
               <li class="nav__link">
@@ -50,7 +50,7 @@
       </nav>
     </section>
 
-    <section id="Search">
+    <section id="search">
       <div class="container">
         <div class="row">
           <h1 class="nav__description--title">Find a Movie</h1>
@@ -71,5 +71,129 @@
         </div>
       </div>
     </section>
+
+    
+
+    <main id="movies__main">
+        <section>
+          <div class="container">
+            <div class="row">
+              <div class="movie__header">
+              <h2 class="section__title movie__header--title">
+                All <span class="red">Movies</span>
+              </h2>
+              <select id="filter" onchange="filterMovies(event)">
+                <option value="" disabled selected>Sort</option>
+                <option value="NEW_TO_OLD"> New Release</option>
+                <option value="OLD_TO_NEW"> Earlier Release</option>
+              </select>
+              </div>
+            </div>
+            <div class="movies">
+              <i class="fas fa-spinner movie__loading--spinner"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+
+
+ <section id="features"> 
+    <div class="container">
+        <div class="row">
+
+    
+    <div class="movies">
+        <div class="movie">
+          <figure class="movie__img--wrapper">
+            <img class="movie__img" src="./Assets/fast & furious 6.jpg" alt="">
+          </figure>
+          <div class="movie__title">
+            Fast & Furious 6
+          </div>
+          <div class="year">
+            2013
+          </div>
+
+     <div class="movies">
+            <div class="movie">
+              <figure class="movie__img--wrapper">
+                <img class="movie__img" src="./Assets/the fast & the furious.jpg" alt="">
+              </figure>
+              <div class="movie__title">
+                The Fast and the Furious
+              </div>
+              <div class="year">
+                2001
+              </div>
+   
+                <div class="movie">
+                  <figure class="movie__img--wrapper">
+                    <img class="movie__img" src="./Assets/fast five.jpg" alt="">
+                  </figure>
+                  <div class="movie__title">
+                    Fast Five
+                  </div>
+                  <div class="year">
+                    2011
+                  </div>
+  
+                    <div class="movie">
+                      <figure class="movie__img--wrapper">
+                        <img class="movie__img" src="./Assets/fast & Furious .jpg" alt="">
+                      </figure>
+                      <div class="movie__title">
+                        Fast & Furious
+                      </div>
+                      <div class="year">
+                        2009
+                      </div>
+
+                      <div class="movie">
+                        <figure class="movie__img--wrapper">
+                          <img class="movie__img" src="./Assets/tokyo drift.jpg" alt="">
+                        </figure>
+                        <div class="movie__title">
+                            The Fast and the Furious: Tokyo Drift                        </div>
+                        <div class="year">
+                          2006
+                        </div>
+                        
+                        <div class="movie">
+                            <figure class="movie__img--wrapper">
+                              <img class="movie__img" src="./Assets/2 fast 2 furious.jpg" alt="">
+                            </figure>
+                            <div class="movie__title">
+                                2 Fast 2 Furious
+                            </div>
+                            <div class="year">
+                              2003
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section>
+            
+                          
+                        <footer>
+                            <div class="divider"></div>
+                            <div class="container">
+                              <div class="row row__column">
+                                <a href="#">
+                                  <figure class="footer__logo">
+                                    <img src="assets/pngwing.com-2022-02-20T081900.534.png" class="footer__logo--img" alt="">
+                                  </figure>
+                                </a>
+                                <div class="footer__list">
+                                  <a href="#" class="footer__link">Home</a>
+                                  <a href="#features" class="footer__link">Movies</a>
+                                  <a class="footer__link no-cursor">Contact</a>
+                                </div>
+                                <div class="footer__copyright">Copyright &copy; 2023 Movie</div>
+                              </div>
+                            </div>
+                          </footer>
+                        
   </body>
 </html>
