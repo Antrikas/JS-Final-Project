@@ -1,3 +1,4 @@
+
 //https://www.omdbapi.com/?apikey=34a5c5d4&s=fast
 
 async function main() {
@@ -5,13 +6,13 @@ async function main() {
     const usersData = await users.json()
    const userListEl = document.querySelector(".movie-list") 
 
-   userListEl.innerHTML = usersData.map((user) => userHTML(user)).join("")
+   moviesListEl.innerHTML = moviesData.map((movie) => moviesHTML(movie)).join("")
     
 }
 
 main()
 
-function showUserPost(id){
+function showMoveiPost(id){
     localStorage.setItem("id", id)
 window.location.href = `${window.location.origin}/user.html`
 }
