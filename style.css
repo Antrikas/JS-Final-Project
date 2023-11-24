@@ -78,8 +78,8 @@ h1 {
 
 .row {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 100%;
+ 
 }
 
 
@@ -194,7 +194,7 @@ h1 {
 
   */
 
-.container{
+.search__container{
     width: 100%;
     padding: 20px;
     display: flex;
@@ -283,8 +283,12 @@ input:hover {
  
   #movies__main {
     background-color: #242424;
-    flex: 1;
     margin-top: 50px;
+  }
+
+  .main__container{
+    width: 100%;
+    padding: 50px;
   }
   
   .movie__header {
@@ -354,9 +358,8 @@ FEATURES
     padding-top: 8vw;
   }
 
-.container{
+.feature__container{
     width: 100%;
-    max-width: 1200px;
 }
   
 .movies {
@@ -436,10 +439,8 @@ align-items: center;
  }
 
  .row {
-    
     width: 100%;
     max-width: 100%;
-    
   }
   
   .row__column {
