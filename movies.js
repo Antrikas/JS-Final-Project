@@ -33,7 +33,7 @@ async function getFeaturedMovies() {
     console.log(featuredMoviesData);
   
     loadedMovies = featuredMoviesData;
-    searchTerm = "Featured Movies";
+    searchTerm = "FeaturedMovies";
 
 
  const moviesHtml = movies

@@ -18,8 +18,8 @@ window.location.href = `${window.location.origin}/movies.html`
 }
 
 function userHTML (movie) {
-    return `<div class="movie-card" onlick="showMoviePost(${movie.id})>
-    <div class="movie-card__container">
+    return `<div class="movies" onlick="showMoviePost(${movie.id})>
+    <div class="feature__container">
       <h3>${user.name}</h4>
         <p><b>Title:</b> ${movie.title}</p>
         <p><b>Year:</b> ${movie.year}</p>
