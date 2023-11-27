@@ -42,9 +42,27 @@
                 </a>
               </li>
               <li class="nav__link">
-                <a href="#" class="nav__link--anchor btn-contact">Contact </a>
+                <a href="#" class="nav__link btn-contact">Contact </a>
               </li>
             </ul>
+            <button class="btn__menu" onclick="openMenu()">
+                <i class="fas fa-bars"></i>
+              </button>
+              <div class="menu__backdrop" style="visibility: hidden;">
+                <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+                  <i class="fas fa-times"></i>
+                </button>
+                <ul class="menu__links">
+                  <li class="menu__list">
+                    <a href="#" class="menu__link" onclick="closeMenu()">Home</a>
+                  </li>
+                  <li class="menu__list">
+                    <a href="#features" class="menu__link" onclick="closeMenu()">Movies</a>
+                  </li>
+                  <li class="menu__list">
+                    <a class="menu__link no-cursor" onclick="closeMenu()">Contacts</a>
+                  </li>
+                </ul>
           </div>
         </div>
       </nav>
@@ -94,7 +112,7 @@
     <h1 class="featured__title">Featured Movies</h1>
     <div class="feature__container">
         <div class="movies">
-            <i class="fas fa-spinner books__loading--spinner"></i>
+            <i class="fas fa-spinner movies__loading--spinner"></i>
             </div>
 <div class="movies">
         <div class="movie">
