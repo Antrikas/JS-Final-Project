@@ -358,19 +358,23 @@ FEATURES
     padding-top: 8vw;
   }
 
+.featured__title{
+    color: white;
+  }
+
 .feature__container{
     width: 100%;
 }
   
+
 .movies {
-    width: 100%;
     display: flex;
-    align-items: center;
-  }
-  
+    flex-wrap: wrap;
+}
+
 .movie{
- width: 100%;
-align-items: center;
+    width: 25%;
+    padding: 24px;
 }
   
 .movie__img {
@@ -393,7 +397,7 @@ align-items: center;
   }
   
 .movie__title {
-    display: flex;
+   
     color: white;
     font-size: 20px;
     margin-bottom: 8px;
