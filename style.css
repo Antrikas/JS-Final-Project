@@ -283,12 +283,11 @@ input:hover {
  
   #movies__main {
     background-color: #242424;
-    margin-top: 50px;
   }
 
   .main__container{
     width: 100%;
-    padding: 50px;
+    padding: 20px;
   }
   
   .movie__header {

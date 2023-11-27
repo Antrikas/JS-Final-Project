@@ -2,9 +2,9 @@
 //https://www.omdbapi.com/?apikey=34a5c5d4&s=fast
 
 async function main() {
-    const users = await fetch("https://www.omdbapi.com/?apikey=34a5c5d4&s=fast")
-    const usersData = await users.json()
-   const userListEl = document.querySelector(".movie-list") 
+    const movies = await fetch("https://www.omdbapi.com/?apikey=34a5c5d4&s=fast")
+    const moviesData = await movies.json()
+   const moviesListEl = document.querySelector(".movie-list") 
 
    moviesListEl.innerHTML = moviesData.map((movie) => moviesHTML(movie)).join("")
     
@@ -14,7 +14,7 @@ main()
 
 function showMoveiPost(id){
     localStorage.setItem("id", id)
-window.location.href = `${window.location.origin}/user.html`
+window.location.href = `${window.location.origin}/movies.html`
 }
 
 function userHTML (movie) {

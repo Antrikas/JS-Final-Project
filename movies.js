@@ -13,14 +13,31 @@
  moviesWrapper.classList.remove('movies__loading')
 
  if (filter === 'NEW_TO_OLD') {
- movies.sort((a, b) => (a.year - b.year));
+ movies.sort((a, b) => parseFloat(b.Year) - parseFloat(a.Year));
  }
  else if(filter === 'OLD_TO_NEW'){
- movies.sort((a, b) => (b.year - a.year));
+ movies.sort((a, b) => parseFloat(a.Year) - parseFloat(b.Year))
 }
 
+async function getFeaturedMovies() {
+    moviesLoading.classList += " movies__loading";
+    let featuredMoviesData = [];
+  
+    for (let i = 0; i < featuredMoviesIMDBID.length; i++) {
+      let movie = await fetch(
+        `https://www.omdbapi.com/?apikey=34a5c5d4&s=fast${featuredMoviesIMDBID[i]}`
+      );
+      const movieData = await movie.json();
+      featuredMoviesData.push(movieData.Search[0]);
+    }
+    console.log(featuredMoviesData);
+  
+    loadedMovies = featuredMoviesData;
+    searchTerm = "Featured Movies";
+
+
  const moviesHtml = movies
- .map((book) => {
+ .map((movie) => {
   return`<div class="movies">
    <figure class="movies__img--wrapper">
      <img class="movies__img" src="${movies.poster}" alt="">
@@ -38,6 +55,8 @@
  })
  .join("");
 
+}
+
  moviesWrapper.innerHTML = moviesHtml;
 
 
@@ -49,7 +68,7 @@ function filterMovies(event){
 }
 
 setTimeout(()=> {
- renderMovies();
+ renderMovies(filter);
 });
 
 
