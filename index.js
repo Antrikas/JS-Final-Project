@@ -1,6 +1,8 @@
 
 //https://www.omdbapi.com/?apikey=34a5c5d4&s=fast
 
+
+
 async function main() {
     const movies = await fetch("https://www.omdbapi.com/?apikey=34a5c5d4&s=fast")
     const moviesData = await movies.json()
@@ -31,3 +33,5 @@ function userHTML (movie) {
     </div>
     </div>`
 }
+
+

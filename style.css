@@ -22,9 +22,11 @@ a {
     text-decoration: none;
   }
   
-a:hover {
-    text-decoration: underline;
-  }
+i {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
 
 ul {
     display: flex;
@@ -92,7 +94,6 @@ button:active {
 }
 
 
-
 .row {
   width: 100%;
   max-width: 100%;
@@ -110,6 +111,8 @@ button:active {
     border: none;
     color: #D1001C;
     display: none;
+    margin-bottom: 24px;
+    
   }
   
 .menu__backdrop {
@@ -554,8 +557,17 @@ FEATURES
     padding: 0 8px;
   }
   
+/* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
 
-
+@media (max-width: 1024px) {
+    .btn__menu {
+      display: block;
+    }
+  
+    .nav__link {
+      display: none;
+    }
+}
   /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
 @media (max-width: 768px) {
     .movie__header {
@@ -584,6 +596,10 @@ FEATURES
     button {
       font-size: 18px;
     }
+
+    .btn__menu {
+        display: block;
+      }
   
     .movies {
       width: 50%;
