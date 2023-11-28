@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderMovies(); // Call the function without a filter initially to load movies on page load
 });
 
-// You can trigger renderMovies with the desired filter when needed (e.g., in response to user actions)
-// For example, in index.js, call renderMovies with the filter parameter to apply sorting
-// renderMovies('NEW_TO_OLD'); // or renderMovies('OLD_TO_NEW');
+function filterMovies(event) {
+    const selectedFilter = event.target.value;
+    renderMovies(selectedFilter);
+}
