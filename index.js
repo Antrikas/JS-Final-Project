@@ -2,17 +2,24 @@
 //https://www.omdbapi.com/?apikey=34a5c5d4&s=fast
 
 
-
 async function main() {
-    const movies = await fetch("https://www.omdbapi.com/?apikey=34a5c5d4&s=fast")
-    const moviesData = await movies.json()
-   const moviesListEl = document.querySelector(".movie-list") 
+    try {
+        const moviesResponse = await fetch("https://www.omdbapi.com/?apikey=34a5c5d4&s=fast");
+        const moviesData = await moviesResponse.json();
+        const moviesListEl = document.querySelector(".movie-list");
 
-   moviesListEl.innerHTML = moviesData.map((movie) => moviesHTML(movie)).join("")
-    
+        // Check if moviesData.Search exists before mapping
+        if (moviesData && moviesData.Search) {
+            moviesListEl.innerHTML = moviesData.Search.map((movie) => movieHTML(movie)).join("");
+        } else {
+            moviesListEl.innerHTML = "<p>No movies found</p>";
+        }
+    } catch (error) {
+        console.error("Error fetching movies:", error);
+        const moviesListEl = document.querySelector(".movie-list");
+        moviesListEl.innerHTML = "<p>An error occurred while fetching movies</p>";
+    }
 }
-
-main()
 
 function showMoviePost(id) {
     localStorage.setItem("id", id);
@@ -33,3 +40,5 @@ function movieHTML(movie) {
         </div>
     </div>`;
 }
+
+main();
