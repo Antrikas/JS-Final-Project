@@ -14,7 +14,6 @@ async function main() {
             } else {
                 moviesListEl.innerHTML = "<p>No movies found</p>";
             }
-        
         }
     } catch (error) {
         console.error("Error fetching movies:", error);
@@ -41,6 +40,21 @@ function movieHTML(movie) {
             <p><b>Poster:</b> <img src="${movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/300x450?text=No+Image"}" alt="${movie.Title}"></p>
         </div>
     </div>`;
+}
+
+
+
+async function filterMovies(event) {
+    const movies = await getMovies(event.target.value);
+    const moviesListEl = document.querySelector(".movie-list");
+
+    if (moviesListEl) {
+        if (movies.length > 0) {
+            moviesListEl.innerHTML = movies.map((movie) => movieHTML(movie)).join("");
+        } else {
+            moviesListEl.innerHTML = "<p>No movies found</p>";
+        }
+    }
 }
 
 main();

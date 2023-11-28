@@ -1,60 +1,65 @@
-let movies = []; 
+let movies = [];
 
-async function getMovies() {
+async function getMovies(filter) {
     try {
         const response = await fetch('https://www.omdbapi.com/?apikey=34a5c5d4&s=fast');
         const data = await response.json();
-        let movies = data.Search || [];
+        let moviesList = data.Search || [];
 
         if (filter === 'NEW_TO_OLD') {
-            movies.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
+            moviesList.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
         } else if (filter === 'OLD_TO_NEW') {
-            movies.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
+            moviesList.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
         }
 
-        return movies;
+        return moviesList;
     } catch (error) {
-        throw new Error('Error fetching movies:', error);
+        console.error('Error fetching movies:', error);
+        return [];
     }
 }
-    const moviesHtml = movies
-        .map((movie) => {
-            return `<div class="movies">
-                <figure class="movies__img--wrapper">
-                    <img class="movies__img" src="${movie.Poster}" alt="">
-                </figure>
-                <div class="movie__title">
-                    ${movie.Title}
-                </div>
-                <div class="movie__year">
-                    ${movie.Year}
-                </div>
-                <div class="movie__imdbID">
-                    ${movie.imdbID}
-                </div>
-            </div>`;
-        })
-        .join("");
 
-  
-
-
-function filterMovies(event) {
-    getMovies(event.target.value);
-}
-
-async function getMovies() {
-    
+async function renderMovies(filter) {
     try {
-        const response = await fetch("https://www.omdbapi.com/?apikey=34a5c5d4&s=fast");
-        const data = await response.json();
-        return data.Search || [];
+        movies = await getMovies(filter);
+
+        const moviesHtml = movies
+            .map((movie) => {
+                return `<div class="movies">
+                    <figure class="movies__img--wrapper">
+                        <img class="movies__img" src="${movie.Poster}" alt="">
+                    </figure>
+                    <div class="movie__title">
+                        ${movie.Title}
+                    </div>
+                    <div class="movie__year">
+                        ${movie.Year}
+                    </div>
+                    <div class="movie__imdbID">
+                        ${movie.imdbID}
+                    </div>
+                </div>`;
+            })
+            .join("");
+
+        const moviesListEl = document.querySelector(".movie-list");
+
+        if (moviesListEl) {
+            if (movies.length > 0) {
+                moviesListEl.innerHTML = moviesHtml;
+            } else {
+                moviesListEl.innerHTML = "<p>No movies found</p>";
+            }
+        }
     } catch (error) {
-        console.error("Error fetching movies:", error);
-        return []; 
+        console.error('Error rendering movies:', error);
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    getMovies(); 
+    renderMovies(); // Call the function without a filter initially to load movies on page load
 });
+
+// You can trigger renderMovies with the desired filter when needed (e.g., in response to user actions)
+// For example, in index.js, call renderMovies with the filter parameter to apply sorting
+// renderMovies('NEW_TO_OLD'); // or renderMovies('OLD_TO_NEW');
