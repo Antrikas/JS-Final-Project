@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="index.js"></script>
+    <script src="movies.js"></script>
   </head>
   <body>
     <section>
@@ -100,10 +101,10 @@
               <h2 class="section__title movie__header--title">
                 All <span class="red">Movies</span>
               </h2>
-              <select id="filter" onchange="filterMovies(event)">
+              <select onchange="filterMovies(event)">
                 <option value="" disabled selected>Sort</option>
-                <option value="NEW_TO_OLD"> New Release</option>
-                <option value="OLD_TO_NEW"> Earlier Release</option>
+                <option value="NEW_TO_OLD">New to Old</option>
+                 <option value="OLD_TO_NEW">Old to New</option>
               </select>
               </div>
              

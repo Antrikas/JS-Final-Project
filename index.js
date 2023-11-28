@@ -8,18 +8,20 @@ async function main() {
         const moviesData = await moviesResponse.json();
         const moviesListEl = document.querySelector(".movie-list");
 
-        // Check if moviesData.Search exists before mapping
-        if (moviesData && moviesData.Search) {
-            moviesListEl.innerHTML = moviesData.Search.map((movie) => movieHTML(movie)).join("");
-        } else {
-            moviesListEl.innerHTML = "<p>No movies found</p>";
+        if (moviesListEl) {
+            if (moviesData && moviesData.Search) {
+                moviesListEl.innerHTML = moviesData.Search.map((movie) => movieHTML(movie)).join("");
+            } else {
+                moviesListEl.innerHTML = "<p>No movies found</p>";
+            }
+        
         }
     } catch (error) {
         console.error("Error fetching movies:", error);
-        const moviesListEl = document.querySelector(".movie-list");
-        moviesListEl.innerHTML = "<p>An error occurred while fetching movies</p>";
     }
 }
+
+
 
 function showMoviePost(id) {
     localStorage.setItem("id", id);
