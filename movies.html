@@ -7,29 +7,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
   <body>
+
+
 <div class="movie-details">
   <!-- Movie details will be displayed here -->
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', async () => {
       const movieId = localStorage.getItem('id');
 
-      // Use the movieId to fetch details from the API or any data source
-      // For example, you can make a new API request to fetch details of the selected movie
+      // Fetch movie details based on the stored ID from the API
+      const response = await fetch(`https://www.omdbapi.com/?apikey=34a5c5d4&s=fast${movieId}`);
+      const movieData = await response.json();
 
-      // Replace this example code with your logic to fetch movie details
-      // For demonstration, creating a placeholder movie object
-      const placeholderMovie = {
-          Title: 'Selected Movie',
-          Year: '2023',
-          imdbID: movieId,
-          Type: 'Movie',
-          Poster: 'https://via.placeholder.com/300x450?text=Movie+Poster'
-          // Add other relevant properties
-      };
-
-      displayMovieDetails(placeholderMovie);
+      // Display movie details on the page
+      displayMovieDetails(movieData);
   });
 
   function displayMovieDetails(movie) {
@@ -41,7 +34,7 @@
           <p><b>Year:</b> ${movie.Year}</p>
           <p><b>ImdbID:</b> ${movie.imdbID}</p>
           <p><b>Type:</b> ${movie.Type}</p>
-          <p><b>Poster:</b> <img src="${movie.Poster}" alt="${movie.Title}"></p>
+          <p><b>Poster:</b> <img src="${movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/300x450?text=No+Image"}" alt="${movie.Title}"></p>
           <!-- Add other movie details as needed -->
       `;
 
