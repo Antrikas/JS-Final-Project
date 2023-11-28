@@ -14,24 +14,22 @@ async function main() {
 
 main()
 
-function showMoveiPost(id){
-    localStorage.setItem("id", id)
-window.location.href = `${window.location.origin}/movies.html`
+function showMoviePost(id) {
+    localStorage.setItem("id", id);
+    window.location.href = `${window.location.origin}/movies.html`;
 }
 
-function userHTML (movie) {
-    return `<div class="movies" onlick="showMoviePost(${movie.id})>
-    <div class="feature__container">
-      <h3>${user.name}</h4>
-        <p><b>Title:</b> ${movie.title}</p>
-        <p><b>Year:</b> ${movie.year}</p>
-        <p><b>ImdbID:</b> <a href="https://${movie.imdbId}" target="_blank">
-        ${movie.website}
-        <p><b>Type:</b> ${movie.type}</p>
-        <p><b>Poster:</b> ${movie.poster}</p>
-        </a></p>
-    </div>
-    </div>`
+function movieHTML(movie) {
+    return `<div class="movie" onclick="showMoviePost('${movie.imdbID}')">
+        <div class="movie__container">
+            <h3>${movie.Title}</h3>
+            <p><b>Title:</b> ${movie.Title}</p>
+            <p><b>Year:</b> ${movie.Year}</p>
+            <p><b>ImdbID:</b> <a href="https://www.imdb.com/title/${movie.imdbID}" target="_blank">
+            ${movie.imdbID}
+            </a></p>
+            <p><b>Type:</b> ${movie.Type}</p>
+            <p><b>Poster:</b> <img src="${movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/300x450?text=No+Image"}" alt="${movie.Title}"></p>
+        </div>
+    </div>`;
 }
-
-

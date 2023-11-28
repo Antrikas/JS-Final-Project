@@ -3,35 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movies</title>
+    <title>Movie Details</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-    
-
   <body>
-    <div class="post__search">
-      <a href="/index.html">
-        <button>← Back</button>
-      </a>
-      <div class="post__search--container">
-        <label class="post__search--label">
-          Search by Id
-        </label>
-        <input type="text" placeholder="fast" onchange="filterMovies(event)">
-      </div>
-    </div>
-    <div class="post-list">
-      <div class="post">
-        <div class="post__title">
-          Post Title
-        </div>
-        <p class="post__body">
-          Post Body
-        </p>
-      </div>
-    </div>
-  </body>
-  <script src="movies.js"></script>
-  
+<div class="movie-details">
+  <!-- Movie details will be displayed here -->
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const movieId = localStorage.getItem('id');
+
+      // Use the movieId to fetch details from the API or any data source
+      // For example, you can make a new API request to fetch details of the selected movie
+
+      // Replace this example code with your logic to fetch movie details
+      // For demonstration, creating a placeholder movie object
+      const placeholderMovie = {
+          Title: 'Selected Movie',
+          Year: '2023',
+          imdbID: movieId,
+          Type: 'Movie',
+          Poster: 'https://via.placeholder.com/300x450?text=Movie+Poster'
+          // Add other relevant properties
+      };
+
+      displayMovieDetails(placeholderMovie);
+  });
+
+  function displayMovieDetails(movie) {
+      const movieDetailsContainer = document.querySelector('.movie-details');
+
+      const movieDetailsHTML = `
+          <h2>${movie.Title}</h2>
+          <p><b>Title:</b> ${movie.Title}</p>
+          <p><b>Year:</b> ${movie.Year}</p>
+          <p><b>ImdbID:</b> ${movie.imdbID}</p>
+          <p><b>Type:</b> ${movie.Type}</p>
+          <p><b>Poster:</b> <img src="${movie.Poster}" alt="${movie.Title}"></p>
+          <!-- Add other movie details as needed -->
+      `;
+
+      movieDetailsContainer.innerHTML = movieDetailsHTML;
+  }
+</script>
 </body>
 </html>
