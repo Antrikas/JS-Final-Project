@@ -1,18 +1,10 @@
-let movies = [];
+let movies = []; 
 
-async function getMovies(filter) {
+async function getMovies() {
     try {
         const response = await fetch('https://www.omdbapi.com/?apikey=34a5c5d4&s=fast');
         const data = await response.json();
-        let moviesList = data.Search || [];
-
-        if (filter === 'NEW_TO_OLD') {
-            moviesList.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
-        } else if (filter === 'OLD_TO_NEW') {
-            moviesList.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
-        }
-
-        return moviesList;
+        return data.Search || [];
     } catch (error) {
         console.error('Error fetching movies:', error);
         return [];
@@ -21,46 +13,48 @@ async function getMovies(filter) {
 
 async function renderMovies(filter) {
     try {
-        movies = await getMovies(filter);
+        const moviesWrapper = document.querySelector("#movies__main .feature__container");
+        moviesWrapper.innerHTML = '<i class="fas fa-spinner movies__loading--spinner"></i>';
 
-        const moviesHtml = movies
-            .map((movie) => {
-                return `<div class="movies">
-                    <figure class="movies__img--wrapper">
-                        <img class="movies__img" src="${movie.Poster}" alt="">
-                    </figure>
-                    <div class="movie__title">
-                        ${movie.Title}
-                    </div>
-                    <div class="movie__year">
-                        ${movie.Year}
-                    </div>
-                    <div class="movie__imdbID">
-                        ${movie.imdbID}
-                    </div>
-                </div>`;
-            })
-            .join("");
-
-        const moviesListEl = document.querySelector(".movie-list");
-
-        if (moviesListEl) {
-            if (movies.length > 0) {
-                moviesListEl.innerHTML = moviesHtml;
-            } else {
-                moviesListEl.innerHTML = "<p>No movies found</p>";
-            }
+        if (!movies.length) {
+            movies = await getMovies();
         }
+
+        if (filter === 'NEW_TO_OLD') {
+            movies.sort((a, b) => parseInt(b.Year) - parseInt(a.Year));
+        } else if (filter === 'OLD_TO_NEW') {
+            movies.sort((a, b) => parseInt(a.Year) - parseInt(b.Year));
+        }
+
+        const moviesHtml = movies.map((movie) => {
+            return `<div class="movies">
+                <figure class="movies__img--wrapper">
+                    <img class="movies__img" src="${movie.Poster}" alt="">
+                </figure>
+                <div class="movie__title">
+                    ${movie.Title}
+                </div>
+                <div class="movie__year">
+                    ${movie.Year}
+                </div>
+            </div>`;
+        }).join("");
+
+        moviesWrapper.innerHTML = moviesHtml;
     } catch (error) {
         console.error('Error rendering movies:', error);
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    renderMovies(); // Call the function without a filter initially to load movies on page load
-});
-
 function filterMovies(event) {
-    const selectedFilter = event.target.value;
-    renderMovies(selectedFilter);
+    renderMovies(event.target.value);
 }
+
+setTimeout(()=> {
+    renderMovies();
+  });
+  
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderMovies(''); // Initial render without any filter
+});

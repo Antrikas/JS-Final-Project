@@ -453,6 +453,8 @@ FEATURES
 .movie{
     width: 25%;
     padding: 24px;
+    display: flex;
+    flex-direction: column;
 }
   
 .movie__img {
@@ -475,7 +477,7 @@ FEATURES
   }
   
 .movie__title {
-   
+   padding-left: 20px;
     color: white;
     font-size: 20px;
     margin-bottom: 8px;
@@ -486,15 +488,15 @@ FEATURES
     cursor: not-allowed;
   }
 
-.year{
+.movie__year{
     display: flex;
-    
+    padding-left: 10px;
     color: white;
     font-size: 20px;
     margin-bottom: 8px;
   }
   
-.year:hover{
+.movie__year:hover{
     text-decoration: underline;
     cursor: not-allowed;
   }
