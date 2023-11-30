@@ -393,6 +393,9 @@ input:hover {
     max-width: 200px;
   }
 
+  
+  
+
   .movies__loading {
     display: flex;
     align-items: center;
@@ -440,8 +443,14 @@ FEATURES
     color: white;
   }
 
-.feature__container{
+
+  .feature__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
+    max-width: 1400px;
 }
   
 
@@ -454,7 +463,9 @@ FEATURES
     width: 25%;
     padding: 24px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
 }
   
 .movie__img {
