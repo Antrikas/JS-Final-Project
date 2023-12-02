@@ -8,7 +8,28 @@
 </head>
   <body>
 
-
+    <section id="search">
+      <div class="search__container">
+          <div class="row">
+              <h1 class="nav__description--title">Find a Movie</h1>
+              <form action="#" method="POST">
+                  <input
+                      type="text"
+                      id="movie"
+                      name="title"
+                      placeholder="Search by title"
+                      required
+                  />
+                  <div class="header__btn--wrapper">
+                      <button class="btn header__btn" onclick="filterMovies(event)">
+                          <i class="fa fa-search" aria-hidden="true"></i>
+                      </button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </section>
+  
     <section id="movie-details">
      
   </section>
