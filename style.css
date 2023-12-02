@@ -451,6 +451,7 @@ FEATURES
     flex-wrap: wrap;
     width: 100%;
     max-width: 1400px;
+    padding-left: 45px;
 }
   
 
@@ -465,31 +466,33 @@ FEATURES
     transition: all 300ms ease-in-out;
 }
 
-.movie{
+.movies{
     display: flex;
     flex-direction: column;
- 
+    transition: all 300ms ease-in-out;
 }
-  
-.movie__img {
-    max-height: 380px;
-    transition: all 300ms ease;
-    cursor: not-allowed;
-    object-fit: contain;
-    object-position: left;
-  }
+ 
+.movies__img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
   
 .movies__img--wrapper {
     margin-bottom: 8px;
-    border-radius: 4px;
     overflow: hidden;
     display: flex;
-    transition: all 300ms ease-in-out;
+    border-radius: 4px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.movies__img--wrapper:hover .movies__img {
+    transform: scale(1.03); 
+    cursor: not-allowed;
   }
-  
-.movies:hover .movie__img {
-    transform: scale(1.03);
-  }
+
+
   
 .movie__title {
    padding-left: 20px;
@@ -589,21 +592,25 @@ FEATURES
         height: 100px;
       }
 
-      .nav__container{
+    .feature__container {
+        padding-left: 45px;
+    }
+    .nav__container{
         height: 100px;
       }
 
-      .movies{
+    .movies{
         width: 50%;
       }
 
 
-      .logo {
+    .logo {
         margin-left: 20px;
         height: 60px;
         width: auto;
       }
  }
+
   /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
  @media (max-width: 768px) {
     .movie__header {
@@ -614,7 +621,7 @@ FEATURES
         height: 80px;
       }
 
-      .nav__container{
+    .nav__container{
         height: 80px;
       } 
 
@@ -625,18 +632,21 @@ FEATURES
      h1 {
       font-size: 40px;
     }
-    
+
      .main_container {
         display: flex;
       }
- 
+
+    .feature__container {
+        padding-left: 45px;
+    }
  
     .section__title {
         display: flex;
       }
  
  
-      .movies {
+    .movies {
         width: 100%;
       }
  
@@ -667,7 +677,10 @@ FEATURES
         height: 60px;
       } 
 
-    
+    .feature__container {
+        padding-left: 45px;
+    }
+
 
       .logo {
         margin-left: 5px;
