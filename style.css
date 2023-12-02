@@ -583,7 +583,7 @@ FEATURES
 
 @media (max-width: 1024px) {
     .btn__menu {
-      display: block;
+      display: none;
     }
      .nav__link {
       display: flex;
@@ -625,9 +625,9 @@ FEATURES
         height: 80px;
       } 
 
-    .nav__link--list {
+    .nav__link--list{
         display: none;
-      }
+    }
 
      h1 {
       font-size: 40px;
@@ -654,14 +654,17 @@ FEATURES
     button {
       font-size: 18px;
     }
-   
+
+    .btn__menu {
+        display: block;
+      }
   }
   
   /* SMALL PHONES, LARGE SMARTPHONES */
   @media (max-width: 550px) {
  
  
-    .btn__menu {
+   .btn__menu {
         margin-left: 5px;
         height: 40px;
         width: auto;
