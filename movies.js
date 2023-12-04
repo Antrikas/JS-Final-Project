@@ -50,7 +50,7 @@ function filterMovies(event) {
     renderMovies(event.target.value);
 }
 async function searchMovies(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); 
 
     try {
         const query = document.getElementById('movie').value;
