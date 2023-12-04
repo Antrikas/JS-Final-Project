@@ -637,10 +637,7 @@ FEATURES
         display: flex;
       }
 
-    .feature__container {
-        padding-left: 30px;
-    }
- 
+    
     .section__title {
         display: flex;
       }
@@ -680,9 +677,7 @@ FEATURES
         height: 60px;
       } 
 
-    .feature__container {
-        padding-left: 30px;
-    }
+    
 
 
       .logo {
