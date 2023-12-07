@@ -123,7 +123,7 @@ button:active {
     right: 0;
     bottom: 0;
     z-index: 99;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     visibility: hidden;
@@ -677,7 +677,9 @@ FEATURES
         height: 60px;
       } 
 
-    
+    .menu__backdrop{
+        display: block;
+    }
 
 
       .logo {
