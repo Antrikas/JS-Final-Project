@@ -309,7 +309,7 @@ input[type="text"] {
     position: relative;
     width: 100%;
     max-width: 250px;
-    padding: 18px 192px 18px 32px;
+    padding: 18px 16px 18px 32px;
     border-radius: 9999px;
     border: 2px solid #a0aec068;
 }
