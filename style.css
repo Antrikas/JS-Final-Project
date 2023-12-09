@@ -592,6 +592,9 @@ FEATURES
         height: 100px;
       }
 
+      .menu__backdrop{
+        display: none;
+    }
     .feature__container {
         padding-left: 30px;
     }
@@ -637,6 +640,9 @@ FEATURES
         display: flex;
       }
 
+      .menu__backdrop{
+        display: flex;
+    }
     
     .section__title {
         display: flex;
@@ -677,10 +683,9 @@ FEATURES
         height: 60px;
       } 
 
-    .menu__backdrop{
-        display: block;
+      .menu__backdrop{
+        display: flex;
     }
-
 
       .logo {
         margin-left: 5px;
